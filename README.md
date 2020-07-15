@@ -27,7 +27,11 @@ go to your feature benach
 git checkout feature-branch
 git rebase master
 ```
-push with --force-with-lease
+push with --force-with-lease 
+
+Note: you must push with `--force` or `--force-with-lease`, when you have done a rebase, becasue the commits histiry will be altered. 
+
+Note 2: ALWAYS try `--force-with-lease` first as it have some showstoppers so stuff don't just explode :pray:!
 ```
 git push --force-with-lease origin feature-branch
 ```
@@ -49,3 +53,13 @@ If we then popes the stack we will select (c6996a9a) and applay to our code base
 ```
 git stash pop
 ```
+
+## git log for cool cats :octocat:
+Get the cool commit-log history, like all the real hacker use:
+```
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+git lg
+```
+Engoy!
+
+
